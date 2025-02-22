@@ -21,7 +21,7 @@ async function startVerification() {
 
     aiAnalysis.textContent = "🔍 Analyzing image with AI...";
     try {
-      const response = await fetch('https://server-eocz.onrender.com', {
+      const response = await fetch('https://server-eocz.onrender.com/analyze', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ imageBase64: base64Image })
