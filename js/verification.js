@@ -21,13 +21,13 @@ async function startVerification() {
 
     aiAnalysis.textContent = "🔍 Analyzing image with AI...";
     try {
-      const response = await fetch('http://localhost:3001/analyze', {
+      const response = await fetch('https://server-eocz.onrender.com', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ imageBase64: base64Image })
       });
       const data = await response.json();
-      aiAnalysis.innerHTML = `<strong>AI Analysis:</strong><br>${data.analysis.replace(/\n/g, '<br>')}`;
+      aiAnalysis.innerHTML = `<strong>AI Analysis:</strong><br>${data.analysis ? data.analysis.replace(/\n/g, '<br>') : "No analysis available"}`;
       creatorDetails.classList.remove("hidden");
     } catch (error) {
       aiAnalysis.textContent = "❌ Failed to get AI analysis.";
