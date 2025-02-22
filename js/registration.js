@@ -36,7 +36,7 @@ function startRegistrationProcess(file, uploaderName) {
   formData.append('uploaderName', uploaderName);
 
   // Send the image file and uploader details to the backend
-  fetch('https://server-eocz.onrender.com/analyze', {
+  fetch('https://server-eocz.onrender.com/upload', {
     method: 'POST',
     body: formData
   })
