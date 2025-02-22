@@ -1,0 +1,310 @@
+/* =========================================
+   Global Reset & Base Styles
+========================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  line-height: 1.6;
+  padding-top: 80px; /* Reserve space for fixed navbar */
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+
+/* =========================================
+   Main Content & Verification Section
+========================================= */
+.main-content {
+  padding: 40px 20px;
+}
+
+.verification-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+.content-box.card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+}
+
+.content-box.card h1 {
+  font-size: 2.2rem;
+  color: #007BFF;
+  margin-bottom: 20px;
+}
+
+.content-box.card p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+/* File Input */
+.content-box.card input[type="file"] {
+  display: block;
+  margin: 20px auto;
+  padding: 15px;
+  border: 2px dashed #ccc;
+  border-radius: 8px;
+  width: 80%;
+  background-color: #fafafa;
+  color: #555;
+  text-align: center;
+  transition: border-color 0.3s;
+}
+
+.content-box.card input[type="file"]:hover {
+  border-color: #007BFF;
+}
+
+/* Button Styles */
+.btn-primary {
+  background-color: #007BFF;
+  color: #fff;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-bottom: 20px;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+/* Status Messages */
+.status {
+  font-size: 1rem;
+  color: #666;
+  margin-top: 20px;
+}
+
+/* Creator Details Section */
+#creatorDetails {
+  margin-top: 20px;
+  text-align: left;
+}
+
+#creatorDetails h2 {
+  color: #007BFF;
+  margin-bottom: 10px;
+}
+
+#creatorDetails p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+/* Payment Status & Download Section */
+#paymentStatus {
+  margin-top: 20px;
+}
+
+#downloadCreatorSection {
+  margin-top: 20px;
+}
+
+#downloadCreatorSection a {
+  background-color: #28a745;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 4px;
+  display: inline-block;
+  transition: background-color 0.3s;
+}
+
+#downloadCreatorSection a:hover {
+  background-color: #218838;
+}
+
+/* =========================================
+   Modal Styles for Login/Signup
+========================================= */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  max-width: 500px;
+  width: 90%;
+  position: relative;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 2rem;
+  color: #333;
+  cursor: pointer;
+}
+
+.modal-body {
+  padding: 20px 0;
+}
+
+.modal-title {
+  font-size: 1.8rem;
+  color: #007BFF;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #555;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.modal-footer {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.9rem;
+}
+
+.modal-footer a {
+  color: #007BFF;
+  cursor: pointer;
+}
+
+/* =========================================
+   Utility Classes
+========================================= */
+.hidden {
+  display: none;
+}
+
+/* =========================================
+       Navbar Styles (Fixed)
+    ========================================= */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #ffffff;
+      border-bottom: 1px solid #e2e8f0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      z-index: 1000;
+    }
+    .navbar .container {
+      height: 90px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo h1 {
+      font-size: 2.25rem;
+      font-weight: 700;
+      color: #1e90ff;
+    }
+    .nav-list {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 50px;
+    }
+    .nav-link {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #4a5568;
+      padding: 10px;
+      transition: color 0.3s ease;
+    }
+    .nav-link:hover,
+    .nav-link.active {
+      color: #1e90ff;
+    }
+    .dropdown {
+      position: relative;
+    }
+    .dropdown-toggle::after {
+      content: ' ▾';
+      font-size: 0.9rem;
+      margin-left: 5px;
+    }
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      display: none;
+      list-style: none;
+      padding: 10px 0;
+      min-width: 150px;
+      z-index: 1000;
+    }
+    .dropdown-menu li a {
+      padding: 10px 20px;
+      font-size: 1rem;
+      color: #4a5568;
+      transition: background-color 0.3s ease;
+    }
+    .dropdown-menu li a:hover {
+      background-color: #edf2f7;
+    }
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+    .nav-actions .btn-login {
+      background-color: #1e90ff;
+      color: #ffffff;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 6px;
+      font-size: 1.1rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    .nav-actions .btn-login:hover {
+      background-color: #1c86ee;
+      transform: translateY(-2px);
+    }

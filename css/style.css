@@ -1,0 +1,483 @@
+/* =========================================
+   Global Reset & Base Styles
+========================================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  line-height: 1.6;
+  padding-top: 80px; /* Reserve space for the fixed navbar */
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* =========================================
+   Navbar Styles (Fixed)
+========================================= */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ffffff;
+  border-bottom: 1px solid #ddd;
+  z-index: 1000;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+}
+.logo h1 {
+  font-size: 1.8rem;
+  color: #007BFF;
+}
+.nav {
+  margin-left: 40px;
+}
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+.nav-list li a {
+  font-size: 1rem;
+  color: #333;
+  transition: color 0.3s;
+}
+.nav-list li a:hover {
+  color: #007BFF;
+}
+.nav-actions .btn-login {
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.nav-actions .btn-login:hover {
+  background-color: #0056b3;
+}
+
+/* =========================================
+   Hero Section
+========================================= */
+.hero-section {
+  background-color: #e9f5ff;
+  padding: 80px 20px;
+  text-align: center;
+}
+.hero-content h1 {
+  font-size: 3rem;
+  color: #007BFF;
+  margin-bottom: 16px;
+}
+.hero-content .lead {
+  font-size: 1.25rem;
+  color: #555;
+  margin-bottom: 24px;
+}
+.btn-primary {
+  background-color: #007BFF;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+/* =========================================
+   Feature Cards Section
+========================================= */
+.features-section {
+  padding: 40px 20px;
+  background-color: #fff;
+}
+.features-section .section-title {
+  font-size: 2rem;
+  color: #007BFF;
+  text-align: center;
+  margin-bottom: 40px;
+}
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  justify-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.feature-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s;
+  width: 100%;
+  max-width: 300px;
+}
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+.feature-icon {
+  font-size: 48px;
+  color: #007BFF;
+  margin-bottom: 12px;
+}
+.feature-title {
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+  color: #333;
+}
+.feature-description {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* =========================================
+   Modal Styles for Login/Signup
+========================================= */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  align-items: center;
+  justify-content: center;
+}
+.modal-content {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  max-width: 500px;
+  width: 90%;
+  position: relative;
+}
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 2rem;
+  color: #333;
+  cursor: pointer;
+}
+.modal-body {
+  padding: 20px 0;
+}
+.modal-title {
+  font-size: 1.8rem;
+  color: #007BFF;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.form-group {
+  margin-bottom: 16px;
+}
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #555;
+}
+.form-group input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.modal-footer {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.9rem;
+}
+.modal-footer a {
+  color: #007BFF;
+  cursor: pointer;
+}
+
+/* =========================================
+   Utility Classes
+========================================= */
+.hidden {
+  display: none;
+}
+
+
+/* Global Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar Container */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  z-index: 1000;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+.logo h1 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #007BFF;
+}
+.logo h1 a {
+  color: inherit;
+}
+
+/* Navigation Links */
+.nav {
+  margin-left: 40px;
+  flex-grow: 1;
+}
+.nav-list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-list li {
+  position: relative;
+}
+
+.nav-link {
+  font-size: 1rem;
+  color: #333;
+  padding: 8px 12px;
+  transition: color 0.3s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #007BFF;
+}
+
+/* Dropdown Menu for Market */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-toggle::after {
+  content: ' ▾';
+  font-size: 0.8rem;
+  margin-left: 4px;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  display: none;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  min-width: 120px;
+  z-index: 1000;
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 10px 15px;
+  font-size: 0.95rem;
+  color: #333;
+  transition: background-color 0.3s;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #f5f5f5;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Login Button */
+.nav-actions .btn-login {
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.nav-actions .btn-login:hover {
+  background-color: #0056b3;
+}
+
+/* Navbar Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+.logo {
+  flex-shrink: 0; /* Prevents it from shrinking */
+  margin-right: 60px; /* Adds spacing between logo and nav */
+}
+
+.logo h1 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #007BFF;
+}
+.logo h1 a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Navigation */
+.nav {
+  flex-grow: 1;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+/* Login Button */
+.nav-actions {
+  margin-left: 30px; /* Adds spacing before the login button */
+}
+
+/* Navbar Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+.logo {
+  flex-shrink: 0; /* Prevents shrinking */
+  margin-right: 100px; /* Increased space between logo and nav */
+}
+
+.logo h1 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #007BFF;
+}
+.logo h1 a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Navigation */
+.nav {
+  flex-grow: 1;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 40px; /* Increased gap between nav items */
+}
+
+/* Login Button */
+.nav-actions {
+  margin-left: 50px; /* More space before login button */
+}
+/* Navbar Container */
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 40px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+.logo {
+  flex-shrink: 0; /* Prevents shrinking */
+  margin-right: 150px; /* EVEN MORE space between logo and nav */
+}
+
+.logo h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #007BFF;
+}
+.logo h1 a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Navigation */
+.nav {
+  flex-grow: 1;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 60px; /* More spacing between nav items */
+}
+
+/* Login Button */
+.nav-actions {
+  margin-left: 80px; /* More space before login button */
+}

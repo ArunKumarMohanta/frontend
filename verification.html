@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZhenID - Media Verification</title>
+  <!-- Google Fonts and Material Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- External CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/verification.css" />
+</head>
+<body>
+  <!-- Navbar -->
+ <header class="navbar">
+    <div class="container">
+      <div class="logo">
+        <h1><a href="index.html">ZhenID</a></h1>
+      </div>
+      <nav class="nav">
+        <ul class="nav-list">
+          <li><a href="registration.html" class="nav-link">Media Registration</a></li>
+          <li><a href="verification.html" class="nav-link">Media Authentication</a></li>
+          <li class="dropdown">
+            <a href="#" class="nav-link dropdown-toggle">Market</a>
+            <ul class="dropdown-menu">
+              <li><a href="market.html?type=rent" class="dropdown-link">Rent</a></li>
+              <li><a href="market.html?type=buy" class="dropdown-link">Buy</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <button class="btn-login" onclick="openModal()">Login</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <section class="verification-section">
+      <div class="content-box card">
+        <h1>Media Authentication</h1>
+        <p>Upload media to verify ownership and license usage.</p>
+        
+        <!-- File Input -->
+        <input type="file" id="verFileInput" accept="image/*,video/*" />
+        <button onclick="startVerification()" class="btn-primary">Start Verification</button>
+        
+        <div id="verStatus" class="status">Waiting for file upload...</div>
+        
+        <!-- Creator Details (Hidden by default) -->
+        <div id="creatorDetails" class="hidden">
+          <h2>Image Details</h2>
+          <div id="aiAnalysis" class="status"></div>
+          <div id="otherUploads"></div>
+          <button onclick="processPayment()" class="btn-primary">Pay & Download Licensed Media</button>
+        </div>
+
+        <!-- Payment Status & Download Section -->
+        <div id="paymentStatus" class="status hidden"></div>
+        <div id="downloadCreatorSection" class="hidden">
+          <a id="downloadCreatorLink" href="#" download="licensed_media">Download Licensed Media</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- External JavaScript -->
+  <script src="js/verification.js"></script>
+</body>
+</html>

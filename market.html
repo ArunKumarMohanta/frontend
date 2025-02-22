@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ZhenID - Market</title>
+  <!-- Google Fonts and Material Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- External CSS -->
+ <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/market.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <<header class="navbar">
+    <div class="container">
+      <div class="logo">
+        <h1><a href="index.html">ZhenID</a></h1>
+      </div>
+      <nav class="nav">
+        <ul class="nav-list">
+          <li><a href="registration.html" class="nav-link">Media Registration</a></li>
+          <li><a href="verification.html" class="nav-link">Media Authentication</a></li>
+          <li class="dropdown">
+            <a href="#" class="nav-link dropdown-toggle">Market</a>
+            <ul class="dropdown-menu">
+              <li><a href="market.html?type=rent" class="dropdown-link">Rent</a></li>
+              <li><a href="market.html?type=buy" class="dropdown-link">Buy</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <button class="btn-login" onclick="openModal()">Login</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Filter Dropdown -->
+  <section class="filter-section">
+    <div class="filter-dropdown-container">
+      <label for="filterDropdown">Sort By:</label>
+      <select id="filterDropdown" class="filter-dropdown">
+        <option value="popularity">Popularity</option>
+        <option value="price">Price</option>
+        <option value="date">Date</option>
+      </select>
+    </div>
+  </section>
+
+  <!-- Market Grid -->
+  <main class="main-content">
+    <div class="market-section">
+      <div class="image-grid" id="imageGrid">
+        <!-- Market items will be dynamically injected here -->
+      </div>
+    </div>
+  </main>
+
+  <!-- Login Modal (shared with other pages) -->
+  <div id="loginModal" class="modal">
+    <div class="modal-content">
+      <span class="close-button" onclick="closeModal()">&times;</span>
+      <!-- Login Form -->
+      <div class="modal-body" id="loginFormContainer">
+        <h2 class="modal-title">Login to ZhenID</h2>
+        <form id="loginFormModal" onsubmit="event.preventDefault(); alert('Logged in successfully!'); closeModal();">
+          <div class="form-group">
+            <label for="modalUsername">Username or Email</label>
+            <input type="text" id="modalUsername" placeholder="Enter your username or email" required>
+          </div>
+          <div class="form-group">
+            <label for="modalPassword">Password</label>
+            <input type="password" id="modalPassword" placeholder="Enter your password" required>
+          </div>
+          <button type="submit" class="btn-primary">Login</button>
+        </form>
+        <p class="modal-footer">Don't have an account? <a href="#" onclick="toggleModalForms(event)">Sign Up</a></p>
+      </div>
+      <!-- Signup Form (hidden by default) -->
+      <div class="modal-body hidden" id="signupModal">
+        <h2 class="modal-title">Sign Up for ZhenID</h2>
+        <form id="signupFormModal" onsubmit="event.preventDefault(); alert('Account created successfully! Please log in.'); toggleModalForms(event);">
+          <div class="form-group">
+            <label for="modalNewUsername">Username or Email</label>
+            <input type="text" id="modalNewUsername" placeholder="Enter your username or email" required>
+          </div>
+          <div class="form-group">
+            <label for="modalNewPassword">Password</label>
+            <input type="password" id="modalNewPassword" placeholder="Enter your password" required>
+          </div>
+          <div class="form-group">
+            <label for="modalConfirmPassword">Confirm Password</label>
+            <input type="password" id="modalConfirmPassword" placeholder="Confirm your password" required>
+          </div>
+          <button type="submit" class="btn-primary">Sign Up</button>
+        </form>
+        <p class="modal-footer">Already have an account? <a href="#" onclick="toggleModalForms(event)">Login</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- External JavaScript -->
+  <script src="js/market.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
