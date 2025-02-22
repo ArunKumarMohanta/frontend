@@ -45,7 +45,8 @@ function startRegistrationProcess(file, uploaderName) {
     if (data.success) {
       regStatus.innerHTML = "✅ Registration complete!";  // Show tick mark and completion message
       // Simulate download link generation
-      downloadLink.href = data.downloadLink;
+      downloadLink.href = data.downloadLink;  // Use Cloudinary link
+      downloadLink.textContent = "Download Image"; 
       downloadSection.classList.remove("hidden");
     } else {
       regStatus.textContent = "❌ Registration failed!";
