@@ -10,10 +10,11 @@ async function startVerification() {
   }
 
   const file = verFileInput.files[0];
+  // Convert the file to a Base64 string (without the data URL prefix)
   const base64Image = await convertToBase64(file);
 
   verStatus.textContent = "🔄 Extracting pointer...";
-  
+
   // Simulate pointer extraction
   setTimeout(async () => {
     const simulatedPointer = "LqXhXso";
@@ -21,6 +22,7 @@ async function startVerification() {
 
     aiAnalysis.textContent = "🔍 Analyzing image with AI...";
     try {
+      // Send POST request to analyze endpoint with the Base64 image
       const response = await fetch('https://server-eocz.onrender.com/analyze', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -36,7 +38,7 @@ async function startVerification() {
   }, 2000);
 }
 
-// Convert uploaded file to Base64
+// Convert file to Base64 string (removes the 'data:image/jpeg;base64,' prefix)
 function convertToBase64(file) {
   return new Promise((resolve, reject) => {
     const reader = new FileReader();
