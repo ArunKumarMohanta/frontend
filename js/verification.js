@@ -10,11 +10,10 @@ async function startVerification() {
   }
 
   const file = verFileInput.files[0];
-  // Convert the file to Base64 (stripping off the prefix)
   const base64Image = await convertToBase64(file);
 
   verStatus.textContent = "🔄 Extracting pointer...";
-
+  
   // Simulate pointer extraction
   setTimeout(async () => {
     const simulatedPointer = "LqXhXso";
@@ -22,19 +21,14 @@ async function startVerification() {
 
     aiAnalysis.textContent = "🔍 Analyzing image with AI...";
     try {
-      // Send the Base64 image as "imageBase64"
       const response = await fetch('https://server-eocz.onrender.com/analyze', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ imageBase64 })
+        body: JSON.stringify({ imageBase64: base64Image })
       });
       const data = await response.json();
-      if (data.success) {
-        aiAnalysis.innerHTML = `<strong>AI Analysis:</strong><br>${data.analysis.replace(/\n/g, '<br>')}`;
-        creatorDetails.classList.remove("hidden");
-      } else {
-        aiAnalysis.textContent = `❌ Analysis failed: ${data.error}`;
-      }
+      aiAnalysis.innerHTML = `<strong>AI Analysis:</strong><br>${data.analysis ? data.analysis.replace(/\n/g, '<br>') : "No analysis available"}`;
+      creatorDetails.classList.remove("hidden");
     } catch (error) {
       aiAnalysis.textContent = "❌ Failed to get AI analysis.";
       console.error("AI Analysis Error:", error);
@@ -42,7 +36,7 @@ async function startVerification() {
   }, 2000);
 }
 
-// Convert uploaded file to Base64 (removing the data URL prefix)
+// Convert uploaded file to Base64
 function convertToBase64(file) {
   return new Promise((resolve, reject) => {
     const reader = new FileReader();
