@@ -10,7 +10,7 @@ async function startVerification() {
   }
 
   const file = verFileInput.files[0];
-  // Convert file to Base64 (without the data URL prefix)
+  // Convert the file to Base64 (stripping off the prefix)
   const base64Image = await convertToBase64(file);
 
   verStatus.textContent = "🔄 Extracting pointer...";
@@ -22,7 +22,7 @@ async function startVerification() {
 
     aiAnalysis.textContent = "🔍 Analyzing image with AI...";
     try {
-      // Send the Base64-encoded image as "imageBase64"
+      // Send the Base64 image as "imageBase64"
       const response = await fetch('https://server-eocz.onrender.com/analyze', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -42,13 +42,12 @@ async function startVerification() {
   }, 2000);
 }
 
-// Convert uploaded file to Base64 string (stripping the prefix)
+// Convert uploaded file to Base64 (removing the data URL prefix)
 function convertToBase64(file) {
   return new Promise((resolve, reject) => {
     const reader = new FileReader();
     reader.readAsDataURL(file);
     reader.onload = () => {
-      // Remove "data:image/jpeg;base64," (or similar) prefix
       const base64String = reader.result.split(',')[1];
       resolve(base64String);
     };
